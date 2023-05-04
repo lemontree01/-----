@@ -1,0 +1,20 @@
+.wolf {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  top: 275px;
+  gap: 30px;
+  img {
+    width: 205px;
+  }
+}
+
+.wolf-three {
+    margin-top: 14px !important;
+    margin-right: 11px; 
+}
+
+.hide {
+  opacity: 0%;
+}

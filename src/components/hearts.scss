@@ -1,0 +1,31 @@
+.hearts {
+  position: absolute;
+  width: 100vw;
+  margin: auto;
+  padding: 0 50%;
+  img {
+    width: 45px;
+  }
+}
+
+.lost-1 {
+  position: relative;
+  top: -330px;
+  left: 170px;
+}
+
+.lost-2 {
+  position: relative;
+  top: -376px;
+  left: 113px;
+}
+
+.lost-3 {
+  position: relative;
+  top: -422px;
+  left: 57px;
+}
+
+.hide {
+  opacity: 0;
+}

@@ -1,11 +1,11 @@
-export type WolfPosition =
+export type Position =
   | "UPPER_RIGHT"
   | "UPPER_LEFT"
   | "BOTTOM_RIGHT"
   | "BOTTOM_LEFT";
 
 export class Wolf {
-  position: WolfPosition;
+  position: Position;
   constructor() {
     this.position = "UPPER_RIGHT";
   }

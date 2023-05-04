@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'digital-7';
+  src: url('../assets/digital-7.ttf');
+}
+
+.score {
+  font-family: 'digital-7', sans-serif;
+  font-size: 80px;
+  position: absolute;
+  width: 100vw;
+  margin: auto;
+  padding: 0 50%;
+}
+
+.score span {
+  position: relative;
+  top: -450px;
+  left: 150px;
+}
