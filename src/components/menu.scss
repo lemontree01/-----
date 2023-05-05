@@ -1,9 +1,14 @@
-
-
-
 .menu {
   width: 100vw;
   margin: auto;
   padding: 0 50%;
-  font-family: 'Roboto' sans-serif;
+  font-family: 'roboto' !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
 }

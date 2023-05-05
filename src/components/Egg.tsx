@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Egg as EggModel } from "../models/Egg";
 import "./egg.scss";
 import Egg1 from "../assets/egg1.png";
@@ -21,35 +21,38 @@ import Egg17 from "../assets/egg17.svg";
 import Egg18 from "../assets/egg18.svg";
 import Egg19 from "../assets/egg19.svg";
 import Egg20 from "../assets/egg20.svg";
+import { Position } from "../models/Wolf";
 
 interface EggProps {
   egg: EggModel;
+  playerPosition: Position;
 }
 
-const Egg: React.FC<EggProps> = ({ egg }) => {
+const Egg: React.FC<EggProps> = ({ egg, playerPosition}) => {
   const [pos, setPos] = useState(egg.dropPosition);
-  // useEffect(() => {
-  //   const id = setInterval(() => {
-  //     egg.roll()
-  //     setPos(egg.dropPosition)
-  //   }, 1000)
-  //   return () => clearInterval(id)
-  // }, [])
+  useEffect(() => {
+    const id = setInterval(() => {
+      setPos(egg.dropPosition)
+    }, 500)
+    return () => {
+      clearInterval(id)
+    }
+  }, [])
   return (
     <div className="egg">
-      {egg.basketPosition === "UPPER_RIGHT" && (
+      {egg.basketPosition === "UPPER_LEFT" && (
         <div className="ur">
           <img
             className={`ur-1 ${egg.dropPosition !== 1 && "hide"}`}
             src={Egg1}
           />
-          <img className="ur-2" src={Egg2} />
-          <img className="ur-3" src={Egg3} />
-          <img className="ur-4" src={Egg4} />
-          <img className="ur-5" src={Egg5} />
+          <img className={`ur-2 ${egg.dropPosition !== 2 && "hide"}`} src={Egg2} />
+          <img className={`ur-3 ${egg.dropPosition !== 3 && "hide"}`} src={Egg3} />
+          <img className={`ur-4 ${egg.dropPosition !== 4 && "hide"}`} src={Egg4} />
+          <img className={`ur-5 ${egg.dropPosition !== 5 && "hide"}`} src={Egg5} />
         </div>
       )}
-      {egg.basketPosition === "BOTTOM_RIGHT" && (
+      {egg.basketPosition === "BOTTOM_LEFT" && (
         <div className="br">
           <img
             className={`ur-6 ${egg.dropPosition !== 1 && "hide"}`}
@@ -73,7 +76,7 @@ const Egg: React.FC<EggProps> = ({ egg }) => {
           />
         </div>
       )}
-      {egg.basketPosition === "UPPER_LEFT" && (
+      {egg.basketPosition === "UPPER_RIGHT" && (
         <div className="br">
           <img
             className={`ur-11 ${egg.dropPosition !== 1 && "hide"}`}
@@ -97,7 +100,7 @@ const Egg: React.FC<EggProps> = ({ egg }) => {
           />
         </div>
       )}
-      {egg.basketPosition === "BOTTOM_LEFT" && (
+      {egg.basketPosition === "BOTTOM_RIGHT" && (
         <div className="br">
           <img
             className={`ur-16 ${egg.dropPosition !== 1 && "hide"}`}
